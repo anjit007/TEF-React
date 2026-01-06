@@ -634,52 +634,182 @@ h2{font-weight:700;color:var(--primary);}
 .why-section {
   padding: 100px 0;
 }
+.badge-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
 
+/* the line */
+.badge-line::before {
+  content: "";
+  width: 36px;
+  height: 2px;
+  background: var(--accent);
+  display: inline-block;
+}
+.why-title {
+  color: var(--primary);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
 .why-main-card {
   background: #fff;
-  border-radius: 20px;
-  padding: 45px;
-  box-shadow: 0 20px 50px rgba(0,0,0,.08);
+  border-radius: 18px;
+  padding: 40px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
 }
 
 .why-years {
-  font-size: 3.2rem;
+  font-size: 3.5rem;
   font-weight: 800;
-  color: #24a148;
+  color: #28a745;
   line-height: 1;
 }
 
-.why-stat.highlight h6 {
-  color: #24a148;
+.why-main-card h5 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
 }
 
+.why-main-card p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.5;
+}
+.why-stat h6 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.why-stat span {
+  font-size: 1rem;
+  color: #666;
+}
+
+.why-stat.highlight h6 {
+  color: #28a745;
+}
 .why-side-card {
   background: #fff;
   border-radius: 16px;
   padding: 26px;
-  box-shadow: 0 14px 35px rgba(0,0,0,.08);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.why-side-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.15);
+}
+
+.why-side-card h6 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 16px;
+}
+
+.why-side-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
 .why-side-card .icon {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
   color: #fff;
+  font-size: 1.2rem;
 }
 
-.icon.blue { background: #0d3b66; }
-.icon.green { background: #24a148; }
-.icon.navy { background: #0a2a4a; }
-
-.why-bottom {
-  background: #f8fafc;
-  border-radius: 20px;
-  padding: 40px 20px;
+.icon.blue { background: #1e3a8a; }
+.icon.green { background: #16a34a; }
+.icon.navy { background: #0f172a; }
+.why-mini {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  height: 100%;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease;
 }
+
+.why-mini:hover {
+  transform: translateY(-5px);
+}
+
+.why-mini i {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.why-mini h6 {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.why-mini p {
+  font-size: 0.9rem;
+  color: #666;
+}
+.why-stats {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.why-stat {
+  padding: 30px 20px;
+}
+
+.icon-circle {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: #eef3f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #5f6c7b;
+}
+
+.why-stat h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--primary);
+}
+
+.why-stat p {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Highlight center stat */
+.why-stat.highlight h3 {
+  color:var(--accent);
+}
+
+.why-stat.highlight .icon-circle {
+  background: #eafaf1;
+  color: var(--accent);
+}
+
 
 /* CONTACT */
 .contact-section {
@@ -858,8 +988,6 @@ button.submit-btn {
   font-size: 20px;
 }
 
-/* Navbar Logo */
-
 
 /* RESPONSIVE */
 @media (max-width: 992px) {
@@ -871,14 +999,6 @@ button.submit-btn {
   .hero-watermark { font-size: 4rem; right: -20px; bottom: -40px; }
   .footer-container { grid-template-columns: 1fr; }
 }
-.service-content ul li::before {
-  content: "✔";
-  color: var(--accent); /* green checkmark */
-  font-weight: 700;
-}
 
-.service-watermark {
-  opacity: 0.1;
-  color: #0d3b66;
-  font-size: 120px;
-}
+
+

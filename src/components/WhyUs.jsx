@@ -2,8 +2,8 @@ export default function WhyUs() {
   return (
     <section id="why" className="why-section">
       <div className="container">
-        <span className="badge-line">---- WHY TRISHAKTI ----</span>
-        <h2 className="mb-5">Why Choose Us</h2>
+        <span className="badge-line">WHY TRISHAKTI</span>
+        <h2 className="mb-5 why-title">Why Choose Us</h2>
 
         <div className="row g-5 align-items-stretch">
           <div className="col-lg-7">
@@ -27,18 +27,27 @@ export default function WhyUs() {
               <div className="row text-center mt-5 g-4">
                 <div className="col-md-4">
                   <div className="why-stat">
+                    <div className="icon-circle">
+                      <i className="bi bi-pie-chart"></i>
+                    </div>
                     <h6>रु 2,500+ Cr</h6>
                     <span>Assets Under Management</span>
                   </div>
                 </div>
                 <div className="col-md-4">
                   <div className="why-stat highlight">
+                    <div className="icon-circle">
+                      <i className="bi bi-graph-up-arrow"></i>
+                    </div>
                     <h6>18.5%</h6>
                     <span>Average Annual Returns</span>
                   </div>
                 </div>
                 <div className="col-md-4">
                   <div className="why-stat">
+                    <div className="icon-circle">
+                      <i className="bi bi-people"></i>
+                    </div>
                     <h6>5,000+</h6>
                     <span>Satisfied Investors</span>
                   </div>
