@@ -4,7 +4,7 @@ export default function About() {
       <div className="container text-center">
         <span className="badge-line">WHO WE ARE</span>
         <h2 className="mt-2">Trishakti Equity Fund</h2>
-        <p className="about-intro mr-3 mx-auto">
+        <p className="about-intro mt-3 mx-auto">
           With over 15 years of excellence in equity investment management,
           Trishakti Equity Fund stands as a trusted partner for investors
           seeking sustainable wealth creation. Our experienced team combines
@@ -15,8 +15,8 @@ export default function About() {
         <div className="row mt-5 g-4 justify-content-center">
           <div className="col-md-6 col-lg-5">
             <div className="about-card">
-              <div className="about-icon blue"></div>
-              <h6>Our Mission</h6>
+              <div className="about-icon blue"><i className="bi bi-shield-check"></i></div>
+              <h3 class="about-header">Our Mission</h3>
               <p>
                 To empower investors with strategic equity investment solutions
                 that create sustainable wealth while maintaining the highest
@@ -27,8 +27,8 @@ export default function About() {
           </div>
           <div className="col-md-6 col-lg-5">
             <div className="about-card">
-              <div className="about-icon green"></div>
-              <h6>Our Vision</h6>
+              <div className="about-icon green"><i className="bi bi-eye"></i></div>
+              <h3 class="about-header">Our Vision</h3>
               <p>
                 To be Nepal’s most trusted equity fund management company,
                 recognized for delivering exceptional returns, innovative
@@ -44,28 +44,28 @@ export default function About() {
           <div className="col-md-6 col-lg-3">
             <div className="core-card">
               <div className="core-icon blue"><i className="bi bi-shield-check"></i></div>
-              <h6>Integrity</h6>
+              <h5>Integrity</h5>
               <p>We uphold the highest standards of honesty and transparency in all our investment decisions and client relationships.</p>
             </div>
           </div>
           <div className="col-md-6 col-lg-3">
             <div className="core-card">
               <div className="core-icon green"><i className="bi bi-trophy"></i></div>
-              <h6>Excellence</h6>
+              <h5>Excellence</h5>
               <p>Our commitment to excellence drives us to consistently deliver superior investment performance and exceptional service.</p>
             </div>
           </div>
           <div className="col-md-6 col-lg-3">
             <div className="core-card">
               <div className="core-icon blue"><i className="bi bi-lightbulb"></i></div>
-              <h6>Innovation</h6>
+              <h5>Innovation</h5>
               <p>We leverage cutting-edge research and innovative strategies to identify unique investment opportunities.</p>
             </div>
           </div>
           <div className="col-md-6 col-lg-3">
             <div className="core-card">
               <div className="core-icon green"><i className="bi bi-people"></i></div>
-              <h6>Partnership</h6>
+              <h5>Partnership</h5>
               <p>We build long-term partnerships with our clients, aligning our success with their financial goals and aspirations.</p>
             </div>
           </div>
