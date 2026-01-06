@@ -12,16 +12,33 @@ section{padding:90px 0;}
 h2{font-weight:700;color:var(--primary);}
 .badge-line{color:var(--accent);font-size:.75rem;font-weight:700;letter-spacing:1px}
 
-
+.title-logo{
+  height: 100px; 
+  width: auto;    
+}
 
 /* NAVBAR */
-/* Default Navbar - Transparent on Hero */
 .navbar {
-  padding: 18px 0;
+  padding: 18px 10px;
   transition: all 0.4s ease;
   background: transparent;
 }
 
+/* keep navbar height stable */
+.navbar-brand {
+  position: relative;
+  height: 56px;
+}
+
+/* BIG logo, no navbar growth */
+.nav-logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+}
 /* Default nav links - White on hero */
 .navbar .nav-link {
   color: #fff !important;
@@ -49,11 +66,11 @@ h2{font-weight:700;color:var(--primary);}
 
 .navbar .btn-contact {
   background: #ffffff;
-  color: black;          /* dark teal / primary text */
+  color: black;          
   padding: 10px 22px;
-  border-radius: 8px;     /* subtle, modern rounding */
+  border-radius: 8px;     
   font-weight: 500;
-  text-decoration: none; /* kill underline */
+  text-decoration: none; 
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -77,8 +94,8 @@ h2{font-weight:700;color:var(--primary);}
 
 .hero-main {
   display: flex;
-  align-items: center; /* vertical center */
-  justify-content: center; /* horizontal center */
+  align-items: center; 
+  justify-content: center; 
   min-height: 100vh;
   position: relative;
   padding: 50px 0 90px;
@@ -116,7 +133,7 @@ h2{font-weight:700;color:var(--primary);}
 }
 
 .hero-badge {
-  font-size: 0.75rem;
+  font-size: 1.5rem;
   color: #24a148;
   font-weight: 700;
   letter-spacing: 1px;
@@ -135,33 +152,82 @@ h2{font-weight:700;color:var(--primary);}
 
 .hero-text {
   max-width: 540px;
-  margin-top: 50px;
+  margin-top: 30px;
   opacity: 0.95;
+  font-size: 1.2rem;
 }
 
 .hero-actions {
   display: flex;
-  align-items: right;
+  align-items: center;
   gap: 26px;
-  margin-top: 32px;
+  margin-top: 36px;
 }
 
+/* Primary CTA */
 .btn-primary-lg {
-  background: #0b4ea2;
+  background: var(--primary);
   color: #fff;
-  padding: 14px 26px;
-  border-radius: 12px;
+  padding: 16px 32px;
+  border-radius: 14px;
   font-weight: 600;
+  letter-spacing: 0.3px;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 30px rgba(11, 78, 162, 0.35);
+  transition: all 0.3s ease;
+}
+/* Hover */
+.btn-primary-lg:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 45px rgba(11, 78, 162, 0.45);
+  color: #fff;
+}
+
+/* Click feedback */
+.btn-primary-lg:active {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(11, 78, 162, 0.35);
 }
 
 .hero-link {
   color: #24a148;
   font-weight: 600;
   text-decoration: none;
-  display: flex;
-  align-items: center;   /* vertically match button */
-  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+/* underline reveal */
+.hero-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #24a148;
+  transition: width 0.25s ease;
+}
+
+.hero-link:hover {
+  color: #24a148;
+}
+
+.hero-link:hover::after {
+  width: 100%;
+}
+.hero-link i {
+  transition: transform 0.25s ease;
+}
+
+.hero-link:hover i {
+  transform: translateX(4px);
 }
 
 .hero-card {
@@ -616,13 +682,7 @@ button.submit-btn {
 }
 
 /* Navbar Logo */
-.nav-logo {
-  height: 85px;
-  width: auto;
-  object-fit: contain;
-  margin-top: -22px;
-  margin-bottom: -22px;
-}
+
 
 /* RESPONSIVE */
 @media (max-width: 992px) {

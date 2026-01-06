@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="container">
         <div className="row align-items-center hero-content">
           <div className="col-lg-6">
-            <span className="hero-badge">TRUSTED EQUITY INVESTMENT</span>
+            <span className="hero-badge">| TRUSTED EQUITY INVESTMENT</span>
 
             <h1>
               Building Wealth<br />
@@ -25,7 +25,7 @@ export default function Hero() {
                 Start Investing <span>→</span>
               </a>
               <a href="#philosophy" className="hero-link">
-                Learn Our Approach →
+                Learn Our Approach  <i class="bi bi-arrow-right"></i>
               </a>
             </div>
           </div>
