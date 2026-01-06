@@ -50,7 +50,7 @@ export default function Contact() {
 
           {/* LEFT CONTENT */}
           <div className="col-lg-5 contact-info">
-            <h2>Get In Touch</h2>
+            <h2 className='contact-title'>Get In Touch</h2>
             <p className="mt-3">
               Ready to start your investment journey? Contact our expert team to
               discuss your investment goals and discover how Trishakti Equity Fund
@@ -73,6 +73,20 @@ export default function Contact() {
                 <strong>Email Address</strong><br />
                 <i className="bi bi-envelope"></i> info@trishaktiequity.com.np
               </div>
+            </div>
+            <div class="social-icons">
+              <a href="#" class="icon linkedin" aria-label="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" class="icon twitter" aria-label="Twitter">
+                <i class="bi bi-twitter-x"></i>
+              </a>
+              <a href="#" class="icon facebook" aria-label="Facebook">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="#" class="icon youtube" aria-label="YouTube">
+                <i class="bi bi-youtube"></i>
+              </a>
             </div>
           </div>
 

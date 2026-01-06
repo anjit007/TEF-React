@@ -345,22 +345,8 @@ h2{font-weight:700;color:var(--primary);}
   background: #fff;
   border-radius: 18px;
   padding: 28px;
-  transition:
-    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow:
-    0 12px 26px rgba(0, 0, 0, 0.18),
-    0 6px 12px rgba(0, 0, 0, 0.12);
+
 }
-
-.about-card:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 24px 50px rgba(0, 0, 0, 0.30),
-    0 12px 20px rgba(0, 0, 0, 0.20);
-}
-
-
 .about-icon {
   width: 46px;
   height: 46px;
@@ -817,14 +803,37 @@ h2{font-weight:700;color:var(--primary);}
   background: #f8f9fb;
 }
 
-.contact-section .social-icons{
+.contact-title{
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 3rem;
+}
+
+.social-icons {
   display: flex;
-  gap: 15px;
+  gap: 16px;
 }
-.contact-section .social-icons a{
-  color: #24a148;
-  font-size: 20px;
+
+.social-icons .icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--primary); /* finance blue */
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
+
+.social-icons .icon:hover {
+  background-color: #083b7a;
+  transform: translateY(-2px);
+}
+
 
 .submit-btn {
   position: relative;
@@ -978,14 +987,36 @@ button.submit-btn {
   text-decoration: underline;
 }
 
-.footer .social-icons{
+.footer.social-icons {
   display: flex;
-  gap: 15px;
+  gap: 14px;
+  margin-top: 16px;
 }
 
-.footer .social-icons a{
-  color: #24a148;
-  font-size: 20px;
+.footer .social-icons a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid #3b3b3b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.25s ease;
+}
+
+/* Active / highlighted (YouTube) */
+.footer.social-icons a.active {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+/* Hover effect */
+.footer .social-icons a:hover {
+  border-color: #ffffff;
+  color: #ffffff;
 }
 
 
