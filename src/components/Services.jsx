@@ -4,7 +4,7 @@ export default function Services() {
       <div className="container">
         <div className="text-center mb-5">
           <span className="badge-line">WHAT WE DO</span>
-          <h1 className="mt-2">Our Investment Services</h1>
+          <h1 className="mt-2 services-title">Our Investment Services</h1>
         </div>
 
         {/* SERVICE 01 - Equity Portfolio Management */}
@@ -12,7 +12,7 @@ export default function Services() {
           <div className="col-lg-6">
             <div className="service-content">
               <span className="service-watermark">01</span>
-              <h2>Equity Portfolio Management</h2>
+              <h2 className="service-content-title">Equity Portfolio Management</h2>
               <p>
                 Comprehensive portfolio management services designed to maximize
                 returns while effectively managing risk through diversified equity
@@ -39,7 +39,7 @@ export default function Services() {
           <div className="col-lg-6">
             <div className="service-content">
               <span className="service-watermark">02</span>
-              <h2>Strategic Investment Advisory</h2>
+              <h2 className="service-content-title">Strategic Investment Advisory</h2>
               <p>
                 Expert advisory services providing personalized strategies,
                 market insights, and comprehensive financial planning.
@@ -62,7 +62,7 @@ export default function Services() {
           <div className="col-lg-6">
             <div className="service-content">
               <span className="service-watermark">03</span>
-              <h2>Wealth Management Solutions</h2>
+              <h2 className="service-content-title">Wealth Management Solutions</h2>
               <p>
                 Holistic wealth management services combining investments,
                 financial planning, and tax optimization strategies.
