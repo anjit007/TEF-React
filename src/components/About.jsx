@@ -4,7 +4,7 @@ export default function About() {
       <div className="container text-center">
         <span className="badge-line">WHO WE ARE</span>
         <h2 className="mt-2">Trishakti Equity Fund</h2>
-        <p className="about-intro mt-3 mx-auto">
+        <p className="about-intro mr-3 mx-auto">
           With over 15 years of excellence in equity investment management,
           Trishakti Equity Fund stands as a trusted partner for investors
           seeking sustainable wealth creation. Our experienced team combines

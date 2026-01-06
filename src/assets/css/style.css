@@ -288,17 +288,48 @@ h2{font-weight:700;color:var(--primary);}
   display: flex;
   justify-content: flex-end; /* pushes card to the right */
 }
+
+
 /* ABOUT SECTION */
 .about-section {
   background:#f4f4f4;
   padding: 100px 0;
 }
 
-.about-intro {
-  max-width: 820px;
-  color: #6c757d;
-  font-size: 1.2rem;
-  line-height: 1.7;
+.about-section .badge-line {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+
+.about-section h2 {
+  font-size: clamp(2.4rem, 4vw, 3rem);
+  font-weight: 700;
+  color : var(--primary)
+}
+
+.about-section .about-intro {
+  font-size: 1.2rem;      /* BIGGER text */
+  line-height: 1.55;
+  max-width: 815px;
+}
+.about-section .badge-line {
+  display: inline-flex;          /* THIS is the fix */
+  align-items: center;
+  gap: 14px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #24a148;
+}
+
+.about-section .badge-line::before,
+.about-section .badge-line::after {
+  content: '';
+  width: 48px;
+  height: 3px;
+  background-color: #24a148;
 }
 
 .about-card {
