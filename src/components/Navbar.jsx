@@ -16,7 +16,7 @@ export default function Navbar({ scrolled }) {
             <li className="nav-item"><a className="nav-link" href="#services">Services</a></li>
             <li className="nav-item"><a className="nav-link" href="#philosophy">Investment Philosophy</a></li>
             <li className="nav-item"><a className="nav-link" href="#why">Why Us</a></li>
-            <li className="nav-item ms-lg-5"><a className="btn btn-light" href="#contact">Contact</a></li>
+            <li className="nav-item ms-lg-5"><a className="btn-contact" href="#contact">Contact</a></li>
           </ul>
         </div>
       </div>

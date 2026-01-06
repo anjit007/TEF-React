@@ -54,7 +54,7 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <div className="company">
-        <span>© 2024 Trishakti Equity Fund. All rights reserved.</span>
+        <span>© 2025 Trishakti Equity Fund. All rights reserved.</span>
         </div>
         <div className="bottom-links">
           <a href="#">Privacy Policy </a>
