@@ -14,8 +14,12 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "bootstrap": "^5.3.8",
+    "cors": "^2.8.5",
     "emailjs": "^5.0.0",
+    "express": "^5.2.1",
     "framer-motion": "^12.24.0",
+    "mysql2": "^3.16.0",
+    "pg": "^8.16.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

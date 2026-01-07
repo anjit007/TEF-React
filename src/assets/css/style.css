@@ -37,6 +37,8 @@ h2{font-weight:700;color:var(--primary);}
   transform: translateY(-50%);
   height: 120px;
   width: auto;
+  margin-top: 10px;
+  padding-bottom: 10px;
   object-fit: contain;
 }
 /* Default nav links - White on hero */
