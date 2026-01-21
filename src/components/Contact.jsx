@@ -66,12 +66,12 @@ export default function Contact() {
 
               <div className="contact-item mt-3">
                 <strong>Phone Number</strong><br />
-                <i className="bi bi-telephone"></i> +977-9848094698
+                <i className="bi bi-telephone"></i>  01-4012646
               </div>
 
               <div className="contact-item mt-3">
                 <strong>Email Address</strong><br />
-                <i className="bi bi-envelope"></i> info@trishaktiequity.com.np
+                <i className="bi bi-envelope"></i> info@tef.com.np
               </div>
             </div>
             <div class="social-icons">

@@ -29,14 +29,6 @@ export default function Hero() {
               </a>
             </div>
           </div>
-
-          <div className="col-lg-6 position-relative">
-            <div className="hero-card">
-              <h3>रू 2,500 Cr+</h3>
-              <p>Assets Under Management</p>
-              <div className="growth">▲ 12.5%</div>
-            </div>
-          </div>
         </div>
       </div>
 

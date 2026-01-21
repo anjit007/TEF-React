@@ -8,14 +8,14 @@ app.use(express.json());
 
 // MySQL connection (phpMyAdmin)
 const pool = mysql.createPool({
-  host: 'localhost',          // or your cPanel DB host
-  user: 'tefcom',  // phpMyAdmin username
-  password: VITE_DB_PASSWORD,
+  host: 'localhost',         
+  user: 'tefcom',  
+  password:'kC#@57mFss58PH',
   database: 'tefcom_tef',
   waitForConnections: true,
 });
 
-app.post('/api/users', async (req, res) => {
+app.post('backend/app.js', async (req, res) => {
   const { email } = req.body;
 
   if (!email) {
@@ -24,7 +24,7 @@ app.post('/api/users', async (req, res) => {
 
   try {
     const [result] = await pool.query(
-      'INSERT INTO email_subcrip (email) VALUES (?)',
+      'INSERT INTO email_subscription (email) VALUES (?)',
       [email]
     );
 

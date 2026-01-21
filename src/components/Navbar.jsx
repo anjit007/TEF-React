@@ -3,7 +3,7 @@ import logo from '../assets/img/tef.png'
 export default function Navbar({ scrolled }) {
   return (
     <nav className={`navbar navbar-expand-lg navbar-dark fixed-top ${scrolled ? 'scrolled' : ''}`}>
-      <div className="container">
+      <div className="container-fluid px-3 px-lg-4">
         <a className="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#">
           <img src={logo} alt="Trishakti Equity Fund Logo" className="nav-logo" />
         </a>
@@ -16,7 +16,7 @@ export default function Navbar({ scrolled }) {
             <li className="nav-item"><a className="nav-link" href="#services">Services</a></li>
             <li className="nav-item"><a className="nav-link" href="#philosophy">Investment Philosophy</a></li>
             <li className="nav-item"><a className="nav-link" href="#why">Why Us</a></li>
-            <li className="nav-item ms-lg-5"><a className="btn-contact" href="#contact">Contact</a></li>
+            <li className="nav-item ms-lg-5"><a className="btn-contact" href="#contact">Contact Us</a></li>
           </ul>
         </div>
       </div>

@@ -39,7 +39,7 @@ function App() {
       <Footer />
 
       {/* Backend status */}
-      {import.meta.env.DEV && apiStatus && (
+      {/* {import.meta.env.DEV && apiStatus && (
         <div style={{
           position: 'fixed',
           bottom: 60,
@@ -53,10 +53,10 @@ function App() {
         }}>
           API: {apiStatus}
         </div>
-      )}
+      )} */}
 
       {/* ENV Debug */}
-      {import.meta.env.DEV && (
+      {/* {import.meta.env.DEV && (
         <div style={{
           position: 'fixed',
           bottom: 10,
@@ -74,7 +74,7 @@ function App() {
           Service: {import.meta.env.VITE_EMAILJS_SERVICE_ID}<br />
           Template: {import.meta.env.VITE_EMAILJS_TEMPLATE_ID}
         </div>
-      )}
+      )} */}
     </>
   )
 }
