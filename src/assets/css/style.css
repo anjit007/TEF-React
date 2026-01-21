@@ -40,7 +40,7 @@ h2{font-weight:700;color:var(--primary);}
   object-fit: contain;
   filter: none; 
   margin-top: -16px; 
-  margin-left: 29px;
+  margin-left: 50px;
   margin-bottom: -10px ;
 
 }
@@ -138,7 +138,7 @@ h2{font-weight:700;color:var(--primary);}
   justify-content: center; 
   min-height: 100vh;
   position: relative;
-  padding: 50px 0 90px;
+  padding: 70px 0 80px;
   color: #fff;
   overflow: hidden;
   background:
@@ -1059,104 +1059,103 @@ button.submit-btn {
   color: #ffffff;
 }
 
+@media (min-width: 1371px) {
+  /* Large desktop – give hero a bit more width */
+  .hero-main .container {
+    max-width: 1400px;
+    width: 78%;
+  }
+}
 
-/* RESPONSIVE */
-@media (max-width: 992px) {
-  .navbar {
-    padding: 14px 12px;
+/* Below 1370px (small desktop / large laptop) */
+@media (max-width: 1370px) {
+
+  .hero-main {
+    padding: 80px 0 80px;
+  }
+
+  .hero-main .container {
+    width: 86%;
+  }
+}
+
+/* Below 1024px (tablet landscape) */
+@media (max-width: 1024px) {
+  /* Navbar logo a bit smaller and closer to left */
+  .navbar-brand {
+    height: 70px;
   }
 
   .nav-logo {
-    height: 45px;
+    height: 105px;
+    margin-left: 0;
+    margin-top: -6px;
+    margin-bottom: -4px;
   }
 
-  .navbar.scrolled .nav-logo {
-    height: 45px;
+  .navbar .nav-link {
+    font-size: 1rem;
+    padding: 8px 10px;
+  }
+
+  /* Hero two columns get a bit tighter */
+  .hero-main {
+    padding: 90px 0 80px;
+  }
+
+  .hero-main h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-text {
+    font-size: 1.05rem;
+  }
+
+  .hero-card {
+    transform: translateX(10px) rotate(-5deg);
+  }
+
+  .shape-1,
+  .shape-2 {
+    right: 40px;
+  }
+}
+
+/* Below 768px (tablet portrait) */
+@media (max-width: 768px) {
+  /* Navbar: logo centered & compact */
+  .navbar {
+    padding: 10px 14px;
+  }
+
+  .navbar-brand {
+    height: 64px;
+    margin-right: 0;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .nav-logo {
+    height: 90px;
+    margin-left: 0;
+    margin-top: -8px;
+    margin-bottom: -8px;
   }
 
   .navbar .nav-link {
     font-size: 0.95rem;
-  }
-
-  .navbar .btn-contact {
-    padding: 8px 18px;
-    font-size: 0.9rem;
-  }
-
-  .hero-main h1 { font-size: 2.4rem; }
-  .hero-card { margin: 40px auto 0; transform: none; }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    padding: 12px 10px;
-  }
-
-  .navbar-brand {
-    height: 48px;
-  }
-
-  .nav-logo {
-    height: 40px;
-  }
-
-  .navbar.scrolled .nav-logo {
-    height: 40px;
-  }
-
-  .navbar .navbar-nav {
-    gap: 6px;
-  }
-
-  .navbar .nav-link {
-    font-size: 0.9rem;
+    padding: 6px 10px;
   }
 
   .navbar .btn-contact {
     padding: 8px 16px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
-  .hero-watermark { font-size: 4rem; right: -20px; bottom: -40px; }
-  .footer-container { grid-template-columns: 1fr; }
-}
-
- /* Large Desktop (Above 1340px) */
- @media (min-width: 1371px) {
-  .hero-main .container {
-    max-width: 1320px;
-    width: 78%;
-  }
-
-  .hero-main h1 {
-    font-size: 3.4rem;
-  }
-
-  .hero-text {
-    font-size: 1.25rem;
-    max-width: 600px;
-  }
-}
-/* Below 1340px */
-@media (max-width: 1370px) {
-  .hero-main .container {
-    width: 86%;
-  }
-
-  .hero-main h1 {
-    font-size: 2.9rem;
-  }
-
-  .hero-text {
-    font-size: 1.15rem;
-  }
-}
-
- /* Below 1024px (tablet landscape) */
-@media (max-width: 1024px) {
+  /* Hero: stack content vertically */
   .hero-main {
     min-height: auto;
-    padding: 90px 0 70px;
+    padding: 100px 0 70px;
   }
 
   .hero-main .container {
@@ -1165,112 +1164,104 @@ button.submit-btn {
 
   .hero-main h1 {
     font-size: 2.4rem;
+    text-align: center;
   }
 
   .hero-text {
-    font-size: 1.05rem;
-    max-width: 560px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-main .col-lg-6.position-relative {
+    justify-content: center;
+    margin-top: 32px;
+  }
+
+  .hero-card {
+    width: 240px;
+    transform: translateX(0) rotate(-4deg);
+  }
+
+  /* Decorative shapes softer on small screens */
+  .shape-1,
+  .shape-2 {
+    opacity: 0.16;
+    right: -20px;
+  }
+
+  .hero-watermark {
+    font-size: clamp(3rem, 20vw, 5.5rem);
+    right: -20px;
+    bottom: -40px;
+  }
+}
+
+/* Below 480px (mobile) */
+@media (max-width: 480px) {
+  /* Navbar */
+  .navbar {
+    padding: 8px 10px;
+  }
+
+  .navbar-brand {
+    height: 56px;
+  }
+
+  .nav-logo {
+    height: 74px;
+  }
+
+  .navbar .btn-contact {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+  }
+
+  /* Hero main content */
+  .hero-main {
+    padding: 90px 0 60px;
+  }
+
+  .hero-main h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text {
+    font-size: 0.98rem;
   }
 
   .hero-actions {
     gap: 18px;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary-lg {
-    padding: 14px 26px;
-    border-radius: 12px;
-  }
-}
-
-
-/* Below 768px (tablet portrait) */
-@media (max-width: 768px) {
-  .hero-main {
-    padding: 86px 0 64px;
-    text-align: center;
-  }
-
-  .hero-main .container {
-    width: 92%;
-    max-width: 640px;
-  }
-
-  .hero-badge {
-    font-size: 1.1rem;
-  }
-
-  .hero-main h1 {
-    font-size: 2.1rem;
-    line-height: 1.2;
-  }
-
-  .hero-text {
-    font-size: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-actions {
-    justify-content: center;
-  }
-
-  .hero-shape {
-    opacity: 0.16;
-  }
-} 
-
-/* Below 480px (mobile) */
-@media (max-width: 480px) {
-  .navbar {
-    padding: 10px 8px;
-    background: #4C7A9E; /* Blue-gray background for initial state */
-    
-  }
-
-  .nav-logo {
-    height: 35px;
-  }
-
-  .navbar.scrolled .nav-logo {
-    height: 35px;
-  }
-
-  .navbar .btn-contact {
-    width: 100%;
-    justify-content: center;
-    margin-top: 8px;
-  }
-
-  .hero-main {
-    padding: 82px 0 56px;
-  }
-
-  .hero-main .container {
-    width: 92%;
-  }
-
-  .hero-badge {
-    font-size: 0.95rem;
-  }
-
-  .hero-main h1 {
-    font-size: 1.85rem;
-  }
-
-  .hero-text {
-    font-size: 0.95rem;
   }
 
   .btn-primary-lg {
     width: 100%;
-    justify-content: center;
+    padding: 14px 18px;
   }
 
   .hero-link {
-    width: 100%;
-    justify-content: center;
+    font-size: 0.95rem;
+  }
+
+  .hero-card {
+    width: 220px;
+    padding: 24px;
+  }
+
+  /* Hide big background watermark on very small screens */
+  .hero-watermark {
+    display: none;
+  }
+
+  .shape-1,
+  .shape-2 {
+    display: none;
   }
 }
-
-

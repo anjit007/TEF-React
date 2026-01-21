@@ -9,68 +9,63 @@ export default function WhyUs() {
           <div className="col-lg-7">
             <div className="why-main-card h-100">
               <div className="d-flex align-items-start gap-4">
-                <div className="why-years">15+</div>
                 <div>
-                  <h5>Years of Excellence</h5>
+                  <h5></h5>
                   <p>
-                    Since our inception, we have consistently delivered superior
-                    investment performance while maintaining the highest standards
-                    of professionalism and client service.
+                    We offer investors a disciplined, research-driven approach to
+                    equity investing with a focus on long-term value creation.
+                    By identifying high-potential businesses and actively
+                    supporting their growth, we aim to deliver sustainable
+                    returns while managing risk responsibly. Our transparent
+                    governance, structured investment process, and commitment to
+                    Nepal’s growing private market make us a trusted partner for
+                    investors seeking both financial performance and meaningful
+                    economic impact.
                   </p>
                 </div>
               </div>
               <p className="mt-4 text-muted">
-                Our experienced team brings deep market knowledge and proven
-                expertise in equity fund management, navigating multiple market
-                cycles while delivering consistent long-term value.
+                We are more than just a source of capital—we are a long-term
+                growth partner. We work closely with entrepreneurs to strengthen
+                strategy, improve operations, and navigate market challenges.
+                With flexible investment structures, hands-on support, and a
+                shared commitment to sustainable growth, we help businesses
+                unlock their full potential while preserving their vision and
+                independence.
               </p>
-              <div className="row text-center mt-5 g-4">
-                <div className="col-md-4">
-                  <div className="why-stat">
-                    <div className="icon-circle">
-                      <i className="bi bi-pie-chart"></i>
-                    </div>
-                    <h6>रु 2,500+ Cr</h6>
-                    <span>Assets Under Management</span>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="why-stat highlight">
-                    <div className="icon-circle">
-                      <i className="bi bi-graph-up-arrow"></i>
-                    </div>
-                    <h6>18.5%</h6>
-                    <span>Average Annual Returns</span>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="why-stat">
-                    <div className="icon-circle">
-                      <i className="bi bi-people"></i>
-                    </div>
-                    <h6>5,000+</h6>
-                    <span>Satisfied Investors</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
           <div className="col-lg-5">
             <div className="why-side-card">
-              <div className="icon blue"><i className="bi bi-award"></i></div>
+              <div className="icon blue">
+                <i className="bi bi-award"></i>
+              </div>
               <h6>Proven Track Record</h6>
-              <p>Consistent outperformance with industry-leading returns and risk-adjusted metrics across market cycles.</p>
+              <p>
+                Consistent outperformance with industry-leading returns and
+                risk-adjusted metrics across market cycles.
+              </p>
             </div>
             <div className="why-side-card mt-4">
-              <div className="icon green"><i className="bi bi-person-check"></i></div>
+              <div className="icon green">
+                <i className="bi bi-person-check"></i>
+              </div>
               <h6>Personalized Service</h6>
-              <p>Dedicated relationship managers providing tailored investment strategies for every client.</p>
+              <p>
+                Dedicated relationship managers providing tailored investment
+                strategies for every client.
+              </p>
             </div>
             <div className="why-side-card mt-4">
-              <div className="icon navy"><i className="bi bi-shield-check"></i></div>
+              <div className="icon navy">
+                <i className="bi bi-shield-check"></i>
+              </div>
               <h6>Regulatory Compliance</h6>
-              <p>Full compliance with SEBI regulations and best practices ensuring transparent and secure investment management.</p>
+              <p>
+                Full compliance with SEBI regulations and best practices ensuring
+                transparent and secure investment management.
+              </p>
             </div>
           </div>
         </div>
@@ -100,5 +95,5 @@ export default function WhyUs() {
         </div>
       </div>
     </section>
-  )
+  );
 }
