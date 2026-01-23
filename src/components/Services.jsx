@@ -2,18 +2,21 @@ export default function Services() {
   return (
     <section id="services" className="services-section">
       <div className="container">
+
         <div className="text-center mb-5">
           <span className="badge-line">WHAT WE DO</span>
           <h1 className="mt-2 services-title">Our Investment Services</h1>
         </div>
 
-        {/* SERVICE 01 - Equity Portfolio Management */}
+        {/* SERVICE 01 */}
         <div className="row align-items-center service-item">
           <div className="col-lg-6">
             <div className="service-content">
               <span className="service-watermark">01</span>
-              <h2 className="service-content-title">Equity Portfolio Management</h2>
-              <p>
+              <h2 className="service-content-title">
+                Equity Portfolio Management
+              </h2>
+              <p className="service-description">
                 Comprehensive portfolio management services designed to maximize
                 returns while effectively managing risk through diversified equity
                 investments and strategic asset allocation.
@@ -25,22 +28,25 @@ export default function Services() {
               </ul>
             </div>
           </div>
+
           <div className="col-lg-6">
-            <img 
-              src="https://media.istockphoto.com/id/2002270922/photo/collaborative-discussion-in-a-modern-office-with-exposed-brick-walls.jpg?s=612x612&w=0&k=20&c=KFdt6dfE300iHGAs2n_Q2zKV4kTzm3i4MKpdtgFhlKw=" 
-              alt="Equity Portfolio Management" 
-              className="service-img" 
+            <img
+              src="https://media.istockphoto.com/id/2002270922/photo/collaborative-discussion-in-a-modern-office-with-exposed-brick-walls.jpg?s=612x612&w=0&k=20&c=KFdt6dfE300iHGAs2n_Q2zKV4kTzm3i4MKpdtgFhlKw="
+              alt="Equity Portfolio Management"
+              className="service-img"
             />
           </div>
         </div>
 
-        {/* SERVICE 02 - Strategic Investment Advisory */}
+        {/* SERVICE 02 */}
         <div className="row align-items-center service-item flex-lg-row-reverse">
           <div className="col-lg-6">
             <div className="service-content">
               <span className="service-watermark">02</span>
-              <h2 className="service-content-title">Strategic Investment Advisory</h2>
-              <p>
+              <h2 className="service-content-title">
+                Strategic Investment Advisory
+              </h2>
+              <p className="service-description">
                 Expert advisory services providing personalized strategies,
                 market insights, and comprehensive financial planning.
               </p>
@@ -51,19 +57,25 @@ export default function Services() {
               </ul>
             </div>
           </div>
+
           <div className="col-lg-6">
-            <img 
-              src="https://images.unsplash.com/photo-1554224155-6726b3ff858f" class="service-img"></img>
+            <img
+              src="https://images.unsplash.com/photo-1554224155-6726b3ff858f"
+              alt="Strategic Investment Advisory"
+              className="service-img"
+            />
           </div>
         </div>
 
-        {/* SERVICE 03 - Wealth Management Solutions */}
+        {/* SERVICE 03 */}
         <div className="row align-items-center service-item">
           <div className="col-lg-6">
             <div className="service-content">
               <span className="service-watermark">03</span>
-              <h2 className="service-content-title">Wealth Management Solutions</h2>
-              <p>
+              <h2 className="service-content-title">
+                Wealth Management Solutions
+              </h2>
+              <p className="service-description">
                 Holistic wealth management services combining investments,
                 financial planning, and tax optimization strategies.
               </p>
@@ -74,16 +86,17 @@ export default function Services() {
               </ul>
             </div>
           </div>
+
           <div className="col-lg-6">
-            <img 
-              src="https://www.bankrate.com/2023/03/28173011/GettyImages-1460296966.jpeg?auto=webp&optimize=high&crop=16:9" 
-              alt="Wealth Management Solutions" 
-              className="service-img" 
+            <img
+              src="https://www.bankrate.com/2023/03/28173011/GettyImages-1460296966.jpeg?auto=webp&optimize=high&crop=16:9"
+              alt="Wealth Management Solutions"
+              className="service-img"
             />
           </div>
         </div>
 
       </div>
     </section>
-  )
+  );
 }
