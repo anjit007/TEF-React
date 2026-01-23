@@ -1414,9 +1414,49 @@ button.submit-btn {
 
 /* Below 480px (mobile) */
 @media (max-width: 480px) {
-  /* Global mobile adjustments */
   body {
     font-size: clamp(14px, 1.5vw, 16px);
+  }
+  .navbar-toggler {
+    border-color: #000; 
+  }
+
+  .navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+
+  /* Mobile dropdown background */
+  .navbar-collapse {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 10px 15px;
+  }
+
+  /* Navbar links container: horizontal layout */
+  .navbar-collapse .navbar-nav {
+    display: flex;
+    flex-direction: row;  /* horizontal links */
+    flex-wrap: wrap;      /* wrap if needed */
+    gap: 05px;            /* space between links */
+    align-items: center;  /* vertical alignment */
+    margin-left: 0;
+  }
+
+  /* Nav links */
+  .navbar-collapse.show .nav-link {
+    color: #000 !important;  /* black text */
+    display: inline-block;
+    text-align: left;
+    margin: 0;               /* remove unwanted margins */
+  }
+
+  /* Contact button */
+  .navbar-collapse.show .btn-contact {
+    color: #fff !important;
+    background-color: var(--primary);
+    margin-left: auto;       /* push it to the right end */
+    padding: 5px 12px;
+    border-radius: 5px;
   }
 
   /* Navbar mobile */
@@ -1426,22 +1466,25 @@ button.submit-btn {
 
   .navbar-brand {
     height: clamp(48px, 8vw, 56px);
+    
   }
 
   .nav-logo {
-    height: clamp(60px, 10vw, 74px);
+    height: clamp(74px, 8vw, 80px);
     margin-top: clamp(-4px, -0.75vw, -6px);
     margin-bottom: clamp(-4px, -0.75vw, -6px);
+    margin-left: -200px;
   }
+  
 
   .navbar .nav-link {
-    font-size: clamp(0.75rem, 1vw, 0.9rem);
-    padding: clamp(4px, 0.5vw, 5px) clamp(6px, 1vw, 8px);
+    font-size: clamp(0.7rem, 0.9vw, 0.85rem);
+    padding: clamp(3px, 0.9vw, 4px) clamp(4px, 0.8vw, 6px);
   }
 
   .navbar .btn-contact {
-    padding: clamp(5px, 0.75vw, 6px) clamp(10px, 1.5vw, 14px);
-    font-size: clamp(0.7rem, 1vw, 0.85rem);
+    padding: clamp(4px, 0.7vw, 5px) clamp(8px, 1vw, 10px);
+    font-size: clamp(0.65rem, 0.9vw, 0.8rem);
   }
 
   /* Hero section mobile */
@@ -1452,15 +1495,18 @@ button.submit-btn {
   .hero-main h1 {
     font-size: clamp(1.4rem, 4.5vw, 2rem);
     line-height: 1.2;
+    text-align: left;
   }
 
   .hero-badge {
     font-size: clamp(0.75rem, 1.5vw, 1rem);
+    text-align: left;
   }
 
   .hero-text {
     font-size: clamp(0.8rem, 1.8vw, 0.98rem);
     max-width: 100%;
+    text-align: left;
   }
 
   .hero-actions {
@@ -1483,7 +1529,11 @@ button.submit-btn {
   }
 
   .hero-watermark {
-    display: none;
+    font-size: clamp(1.8rem, 17vw, 5.5rem);
+    bottom: -30px;
+    right: -20px;
+    letter-spacing: 2px;
+    opacity: 90%;
   }
 
   .shape-1,
