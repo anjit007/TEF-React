@@ -151,10 +151,10 @@ h2{font-weight:700;color:var(--primary);}
   position: absolute;
   bottom: -56px;
   right: -40px;
-  font-size: clamp(4.5rem, 14vw, 12rem);
+  font-size: clamp(4rem, 13vw, 11rem);
   font-weight: 900;
   letter-spacing: 8px;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.57);
   text-transform: uppercase;
   pointer-events: none;
   user-select: none;
@@ -163,8 +163,8 @@ h2{font-weight:700;color:var(--primary);}
 
 .hero-main .container {
  
-  max-width: 1300px;
-  width: 80%;
+  max-width: 1100px;
+  width: 85%;
 }
 
 .hero-main .hero-card {
@@ -200,15 +200,15 @@ h2{font-weight:700;color:var(--primary);}
 .hero-actions {
   display: flex;
   align-items: center;
-  gap: 26px;
-  margin-top: 36px;
+  gap: 30px;
+  margin-top: 2px;
 }
 
 /* Primary CTA */
 .btn-primary-lg {
   background: var(--primary);
   color: #fff;
-  padding: 16px 32px;
+  padding: 20px 35px;
   border-radius: 14px;
   font-weight: 600;
   letter-spacing: 0.3px;
@@ -1060,12 +1060,69 @@ button.submit-btn {
 }
 
 @media (min-width: 1371px) {
-  /* Large desktop – give hero a bit more width */
-  .hero-main .container {
-    max-width: 1400px;
-    width: 78%;
+.hero-main .container {
+  max-width: 1600px;
+  width: 90%;
+  max-height: 1900px;
+  height: 50vh;
+  font-size: 1.5rem;
   }
+  .hero-main .container h1 {
+    font-size: 4.5rem;
+  }
+  .hero-main .container  .hero-text {
+    font-size: 1.3rem;
+  }
+
+.nav-logo {
+  position: static;
+  transform: none;
+  height: 180px;
+  width: auto;
+  object-fit: contain;
+  filter: none; 
+  margin-top: -10px; 
+  margin-left: 90px;
+  margin-bottom: -10px ;
+
+  }
+.navbar-brand {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  margin-right: auto; 
 }
+
+.hero-shape {
+  position: absolute;
+  border-radius: 20px;
+  opacity: 0.25;
+}
+
+.shape-1 {
+  width: 380px;
+  height: 400px;
+  background: #24a148;
+  right: 350px;
+  top: 300px;
+  transform: rotate(15deg);
+}
+
+.shape-2 {
+  width: 360px;
+  height: 360px;
+  background: #0d3b66;
+  right: 240px;
+  top: 270px;
+  transform: rotate(-10deg);
+} 
+.hero-main .col-lg-6.position-relative {
+  display: flex;
+  justify-content: flex-end; /* pushes card to the right */
+}
+
+}
+
 
 /* Below 1370px (small desktop / large laptop) */
 @media (max-width: 1370px) {
