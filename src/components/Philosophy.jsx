@@ -4,7 +4,7 @@ export default function Philosophy() {
       <div className="container text-center">
         <span className="badge-line">OUR APPROACH</span>
         <h2 className="mt-2 philosophy-title">Investment Philosophy</h2>
-        <p className="philosophy-intro mt-3 mx-auto">
+        <p className="philosophy-intro mt-4 mx-auto">
           Our investment philosophy is built on the foundation of disciplined research,
           strategic diversification, and long-term value creation. We believe in making
           informed decisions based on comprehensive analysis and maintaining a patient

@@ -1468,13 +1468,12 @@ button.submit-btn {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
 
-  /* Mobile dropdown background */
-  .navbar-collapse {
+  .navbar {
     background-color: #ffffff;
-    width: 100%;
-    padding: 20px 25px;
-  }
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    height: 7vh;
 
+  }
   /* Navbar links container: horizontal layout */
   .navbar-collapse .navbar-nav {
     display: flex;
@@ -1490,14 +1489,14 @@ button.submit-btn {
     color: #000 !important;  /* black text */
     display: inline-block;
     text-align: left;
-    margin: 0;               /* remove unwanted margins */
+    margin: 0;             
   }
 
-  /* Contact button */
+
   .navbar-collapse.show .btn-contact {
     color: #fff !important;
     background-color: var(--primary);
-    margin-left: auto;       /* push it to the right end */
+    margin-left: auto;      
     padding: 5px 12px;
     border-radius: 5px;
   }
@@ -1513,8 +1512,8 @@ button.submit-btn {
   }
 
   .nav-logo {
-    height: clamp(74px, 8vw, 80px);
-    margin-top: clamp(-4px, -0.75vw, -6px);
+    height: clamp(72px, 8vw, 80px);
+    margin-top: clamp(-8px, -1vw, -12px);
     margin-bottom: clamp(-4px, -0.75vw, -6px);
     margin-left: -200px;
   }
@@ -1607,6 +1606,13 @@ button.submit-btn {
   .service-content ul li {
     font-size: clamp(0.8rem, 1.3vw, 0.95rem);
   }
+  .philosophy-intro{
+    font-size: clamp(0.95rem, 1.5vw, 1rem);
+  }
+  .philosophy-quote p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    text-align: left;
+  }
 
   /* Footer mobile */
   .footer {
@@ -1624,6 +1630,7 @@ button.submit-btn {
 
   .footer-brand p {
     font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+    width: 225px;
   }
 
   .newsletter-box {
