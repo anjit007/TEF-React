@@ -1196,6 +1196,10 @@ button.submit-btn {
     justify-content: space-between;
     align-items: center;
   }
+  .footer-brand p {
+    font-size: clamp(1rem, 1.2vw, 1rem);
+    width: 290px;
+  }
 }
 
 
@@ -1468,16 +1472,10 @@ button.submit-btn {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
 
-  .navbar {
-    background-color: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    height: 7vh;
-
-  }
   /* Navbar links container: horizontal layout */
   .navbar-collapse .navbar-nav {
     display: flex;
-    flex-direction: column;  /* horizontal links */
+    flex-direction: row;  /* horizontal links */
     flex-wrap: wrap;      /* wrap if needed */
     gap: 05px;            /* space between links */
     align-items: center;  /* vertical alignment */
@@ -1546,7 +1544,7 @@ button.submit-btn {
   }
 
   .hero-text {
-    font-size: clamp(0.8rem, 1.8vw, 0.98rem);
+    font-size: clamp(0.7rem, 1.8vw, 0.98rem);
     max-width: 100%;
     text-align: left;
   }
@@ -1554,6 +1552,9 @@ button.submit-btn {
   .hero-actions {
     gap: clamp(10px, 2vw, 15px);
   }
+  .hero-link {
+    display: none;
+    }
 
   .btn-primary-lg {
     width: 100%;
@@ -1576,6 +1577,11 @@ button.submit-btn {
     right: -20px;
     letter-spacing: 2px;
     opacity: 90%;
+  }
+  .hero-link {
+    font-size: clamp(14px, 2vw, 18px);
+    line-height: 1;
+    vertical-align: middle;
   }
 
   .shape-1,
