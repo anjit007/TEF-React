@@ -39,31 +39,33 @@ export default function Services() {
         </div>
 
         {/* SERVICE 02 */}
-        <div className="row align-items-center service-item flex-lg-row-reverse">
-          <div className="col-lg-6">
-            <div className="service-content">
-              <span className="service-watermark">02</span>
-              <h2 className="service-content-title">
-                Strategic Investment Advisory
-              </h2>
-              <p className="service-description">
-                Expert advisory services providing personalized strategies,
-                market insights, and comprehensive financial planning.
-              </p>
-              <ul>
-                <li>Personalized investment strategy development</li>
-                <li>Market research and analysis reports</li>
-                <li>Ongoing advisory and consultation support</li>
-              </ul>
+        <div className="services">
+          <div className="row align-items-center service-item flex-lg-row-reverse">
+            <div className="col-lg-6">
+              <div className="service-content">
+                <span className="service-watermark">02</span>
+                <h2 className="service-content-title">
+                  Strategic Investment Advisory
+                </h2>
+                <p className="service-description">
+                  Expert advisory services providing personalized strategies,
+                  market insights, and comprehensive financial planning.
+                </p>
+                <ul>
+                  <li>Personalized investment strategy development</li>
+                  <li>Market research and analysis reports</li>
+                  <li>Ongoing advisory and consultation support</li>
+                </ul>
+              </div>
             </div>
-          </div>
 
-          <div className="col-lg-6">
-            <img
-              src="https://images.unsplash.com/photo-1554224155-6726b3ff858f"
-              alt="Strategic Investment Advisory"
-              className="service-img"
-            />
+            <div className="col-lg-6">
+              <img
+                src="https://images.unsplash.com/photo-1554224155-6726b3ff858f"
+                alt="Strategic Investment Advisory"
+                className="service-img"
+              />
+            </div>
           </div>
         </div>
 

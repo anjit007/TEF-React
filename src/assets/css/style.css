@@ -552,6 +552,7 @@ h2{
   font-size: clamp(1rem, 1.6vw, 1.15rem);
   line-height: 1.7;
   color: #4a5568;
+  text-align: left;
 }
 
 /* WATERMARK */
@@ -1208,9 +1209,10 @@ button.submit-btn {
     width: 86%;
   }
 
-  .footer-container {
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
-    gap: clamp(30px, 4vw, 40px);
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
@@ -1270,6 +1272,47 @@ button.submit-btn {
   section {
     padding: clamp(40px, 6vw, 60px) 0;
   }
+    .navbar-toggler {
+    border-color: #000; 
+  }
+
+  .navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+
+  /* Mobile dropdown background */
+  .navbar-collapse {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 10px 15px;
+  }
+
+  /* Navbar links container: horizontal layout */
+  .navbar-collapse .navbar-nav {
+    display: flex;
+    flex-direction: row;  /* horizontal links */
+    flex-wrap: wrap;      /* wrap if needed */
+    gap: 20px;            /* space between links */
+    align-items: center;  /* vertical alignment */
+    margin-left: 0;
+  }
+
+  /* Nav links */
+  .navbar-collapse.show .nav-link {
+    color: #000 !important;  /* black text */
+    display: inline-block;
+    text-align: left;
+    margin: 0;               /* remove unwanted margins */
+  }
+
+  /* Contact button */
+  .navbar-collapse.show .btn-contact {
+    color: #fff !important;
+    background-color: var(--primary);
+    margin-left: auto;       /* push it to the right end */
+    padding: 5px 12px;
+    border-radius: 5px;
+  }
 
   /* Navbar: logo centered & compact */
   .navbar {
@@ -1284,10 +1327,10 @@ button.submit-btn {
   }
 
   .nav-logo {
-    height: clamp(70px, 12vw, 90px);
-    margin-left: 0;
-    margin-top: clamp(-6px, -1vw, -8px);
-    margin-bottom: clamp(-6px, -1vw, -8px);
+    height: clamp(74px, 8vw, 80px);
+    margin-top: clamp(-4px, -0.75vw, -6px);
+    margin-bottom: clamp(-4px, -0.75vw, -6px);
+    margin-left: -400px;
   }
 
   .navbar .nav-link {
@@ -1313,14 +1356,14 @@ button.submit-btn {
 
   .hero-main h1 {
     font-size: clamp(1.6rem, 5vw, 2.4rem);
-    text-align: center;
+    text-align: left;
   }
 
   .hero-text {
     margin-top: clamp(15px, 3vw, 20px);
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    text-align: left;
     font-size: clamp(0.85rem, 2vw, 1.05rem);
   }
 
@@ -1429,13 +1472,13 @@ button.submit-btn {
   .navbar-collapse {
     background-color: #ffffff;
     width: 100%;
-    padding: 10px 15px;
+    padding: 20px 25px;
   }
 
   /* Navbar links container: horizontal layout */
   .navbar-collapse .navbar-nav {
     display: flex;
-    flex-direction: row;  /* horizontal links */
+    flex-direction: column;  /* horizontal links */
     flex-wrap: wrap;      /* wrap if needed */
     gap: 05px;            /* space between links */
     align-items: center;  /* vertical alignment */
@@ -1549,6 +1592,15 @@ button.submit-btn {
   .why-mini {
     padding: clamp(16px, 3vw, 20px);
     margin-bottom: clamp(12px, 2vw, 16px);
+  }
+  .services .service-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .services .service-item .service-img {
+    order: -1; /* move image to top */
+    margin-bottom: clamp(16px, 3vw, 24px);
   }
 
   /* Service items */
