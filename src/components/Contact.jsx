@@ -1,47 +1,117 @@
-import { useState } from 'react'
-import emailjs from '@emailjs/browser'
+// import { useState } from 'react'
+// import emailjs from '@emailjs/browser'
 
-emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+// emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+
+// export default function Contact() {
+//   const [charCount, setCharCount] = useState(0)
+//   const [loading, setLoading] = useState(false)
+//   const [success, setSuccess] = useState(null)
+
+//   const handleMessage = (e) => {
+//     const value = e.target.value.slice(0, 500)
+//     e.target.value = value
+//     setCharCount(value.length)
+//   }
+
+//   const sendEmail = async (e) => {
+//     e.preventDefault()
+//     setLoading(true)
+//     setSuccess(null)
+
+//     try {
+//       await emailjs.send(
+//         import.meta.env.VITE_EMAILJS_SERVICE_ID,
+//         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+//         {
+//           fullName: e.target.name.value,
+//           phone: e.target.phone.value,
+//           interest: e.target.interest.value,
+//           email: e.target.email.value,
+//           message: e.target.message.value,
+//         }
+//       )
+
+//       setSuccess(true)
+//       e.target.reset()
+//       setCharCount(0)
+//     } catch (err) {
+//       console.error('Email sending failed:', err)
+//       setSuccess(false)
+//     }
+
+//     setLoading(false)
+//   }
+
+import { useState } from 'react';
 
 export default function Contact() {
-  const [charCount, setCharCount] = useState(0)
-  const [loading, setLoading] = useState(false)
-  const [success, setSuccess] = useState(null)
+  const [charCount, setCharCount] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(null); // null | true | false
 
   const handleMessage = (e) => {
-    const value = e.target.value.slice(0, 500)
-    e.target.value = value
-    setCharCount(value.length)
-  }
+    const value = e.target.value.slice(0, 500);
+    e.target.value = value;
+    setCharCount(value.length);
+  };
 
   const sendEmail = async (e) => {
-    e.preventDefault()
-    setLoading(true)
-    setSuccess(null)
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(null);
+
+    const formData = {
+      name: e.target.name.value.trim(),
+      email: e.target.email.value.trim(),
+      phone: e.target.phone.value.trim(),
+      interest: e.target.interest.value,
+      message: e.target.message.value.trim(),
+    };
 
     try {
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          fullName: e.target.name.value,
-          phone: e.target.phone.value,
-          interest: e.target.interest.value,
-          email: e.target.email.value,
-          message: e.target.message.value,
-        }
-      )
+      const API_URL = process.env.NODE_ENV === 'development' 
+        ? 'http://localhost:3000'   // ← your backend port
+        : '';  // empty = relative /send-email in prod
 
-      setSuccess(true)
-      e.target.reset()
-      setCharCount(0)
+      const response = await fetch(`${API_URL}/send-email`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      // ← Add this: Log raw response for debugging
+      const text = await response.text();  // get as text first
+      console.log('Raw backend response:', text);  // ← check this in console!
+      console.log('Status code:', response.status);
+
+      let result;
+      try {
+        result = JSON.parse(text);  // try to parse
+      } catch (jsonErr) {
+        console.error('JSON parse failed – raw body was:', text);
+        throw new Error('Invalid response from server (not JSON)');
+      }
+
+      if (!response.ok) {
+        throw new Error(result.message || `Server error: ${response.status}`);
+      }
+
+      if (!result.success) {
+        throw new Error(result.message || 'Failed to send');
+      }
+
+      setSuccess(true);
+      e.target.reset();
+      setCharCount(0);
     } catch (err) {
-      console.error('Email sending failed:', err)
-      setSuccess(false)
+      console.error('Send error details:', err.message);
+      setSuccess(false);
+    } finally {
+      setLoading(false);
     }
+  };
 
-    setLoading(false)
-  }
 
   return (
     <section id="contact" className="contact-section">
@@ -121,14 +191,20 @@ export default function Contact() {
 
                     <div className="col-md-6">
                       <input
-                        id ="phone"
+                        name="phone" // Added name
+                        id="phone"
                         className="form-control"
                         placeholder="Phone Number *"
+                        required // Added if mandatory
                       />
                     </div>
 
                     <div className="col-md-6">
-                      <select className="form-select" id ="interest">
+                      <select 
+                        name="interest" // Added name
+                        id="interest"
+                        className="form-select"
+                      >
                         <option>Investment Interest</option>
                         <option>Equity Portfolio</option>
                         <option>Investment Advisory</option>

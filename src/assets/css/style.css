@@ -12,7 +12,10 @@ html {
 * {
   box-sizing: border-box;
 }
-
+.title-logo {
+  width: 200px;  /* Adjust width */
+  height: auto;  /* Keeps aspect ratio */
+}
 body{
   font-family: var(--bs-font-sans-serif);
   overflow-x: hidden;
@@ -304,17 +307,7 @@ h2{
   transform: translateX(4px);
 }
 
-.hero-card {
-  background: #fff;
-  color: #0d3b66;
-  padding: clamp(20px, 3vw, 30px);
-  border-radius: 20px;
-  width: clamp(200px, 80vw, 260px);
-  max-width: 100%;
-  transform: translateX(clamp(0px, 5vw, 40px)) rotate(-6deg);
-  box-shadow: 0 25px 50px rgba(0,0,0,.25);
-  animation: float 4s ease-in-out infinite;
-}
+
 
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(-6deg); }
@@ -1223,6 +1216,46 @@ button.submit-btn {
 /* Below 1024px (tablet landscape) */
 @media (max-width: 1024px) {
   /* Navbar logo a bit smaller and closer to left */
+      .navbar-toggler {
+    border-color: #000; 
+  }
+
+  .navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+
+  /* Mobile dropdown background */
+  .navbar-collapse {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 10px 15px;
+  }
+    /* Nav links */
+  .navbar-collapse.show .nav-link {
+    color: #000 !important;  /* black text */
+    display: inline-block;
+    text-align: left;
+    margin: 0;               /* remove unwanted margins */
+  }
+
+  /* Contact button */
+  .navbar-collapse.show .btn-contact {
+    color: #fff !important;
+    background-color: var(--primary);
+    margin-left: auto;       /* push it to the right end */
+    padding: 5px 12px;
+    border-radius: 5px;
+  }
+
+  /* Navbar links container: horizontal layout */
+  .navbar-collapse .navbar-nav {
+    display: flex;
+    flex-direction: column;  /* horizontal links */
+    flex-wrap: wrap;      /* wrap if needed */
+    gap: 20px;            /* space between links */
+    align-items: center;  /* vertical alignment */
+    margin-left: 0;
+  }
   .navbar-brand {
     height: clamp(60px, 8vw, 70px);
   }
@@ -1241,19 +1274,19 @@ button.submit-btn {
 
   /* Hero two columns get a bit tighter */
   .hero-main {
-    padding: clamp(60px, 8vw, 90px) 0;
+    padding: clamp(100px, 10vw, 120px) 0; /* slightly more padding */
   }
 
+  .hero-badge{
+    font-size: clamp(2rem, 2vw, 11rem); /* slightly bigger badge text */
+  }
   .hero-main h1 {
-    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-size: clamp(3.5rem, 6vw, 3.8rem); /* bigger heading */
+    width: 100%;
   }
 
   .hero-text {
-    font-size: clamp(0.9rem, 2vw, 1.05rem);
-  }
-
-  .hero-card {
-    transform: translateX(clamp(5px, 2vw, 10px)) rotate(-5deg);
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem); /* bigger paragraph text */
   }
 
   .shape-1,
@@ -1267,7 +1300,7 @@ button.submit-btn {
   }
 
   .footer-brand {
-    grid-column: 1 / -1;
+    grid-column: 1;
   }
 }
 
@@ -1294,7 +1327,7 @@ button.submit-btn {
   /* Navbar links container: horizontal layout */
   .navbar-collapse .navbar-nav {
     display: flex;
-    flex-direction: row;  /* horizontal links */
+    flex-direction: column;  /* horizontal links */
     flex-wrap: wrap;      /* wrap if needed */
     gap: 20px;            /* space between links */
     align-items: center;  /* vertical alignment */
@@ -1472,13 +1505,12 @@ button.submit-btn {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
 
-  /* Navbar links container: horizontal layout */
   .navbar-collapse .navbar-nav {
     display: flex;
-    flex-direction: row;  /* horizontal links */
-    flex-wrap: wrap;      /* wrap if needed */
-    gap: 05px;            /* space between links */
-    align-items: center;  /* vertical alignment */
+    flex-direction: column;  
+    flex-wrap: wrap;      
+    gap: 05px;            
+    align-items: center; 
     margin-left: 0;
   }
 

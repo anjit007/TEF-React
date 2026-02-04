@@ -63,7 +63,7 @@ export default function WhyUs() {
               </div>
               <h6>Regulatory Compliance</h6>
               <p>
-                Full compliance with SEBI regulations and best practices ensuring
+                Full compliance with SEBON regulations and best practices ensuring
                 transparent and secure investment management.
               </p>
             </div>
