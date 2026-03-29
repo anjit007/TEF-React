@@ -43,12 +43,58 @@
 //     setLoading(false)
 //   }
 
+// import { useState } from 'react'
+// import emailjs from '@emailjs/browser'
+
+// emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+
+// export default function Contact() {
+//   const [charCount, setCharCount] = useState(0)
+//   const [loading, setLoading] = useState(false)
+//   const [success, setSuccess] = useState(null)
+
+//   const handleMessage = (e) => {
+//     const value = e.target.value.slice(0, 500)
+//     e.target.value = value
+//     setCharCount(value.length)
+//   }
+
+//   const sendEmail = async (e) => {
+//     e.preventDefault()
+//     setLoading(true)
+//     setSuccess(null)
+
+//     try {
+//       await emailjs.send(
+//         import.meta.env.VITE_EMAILJS_SERVICE_ID,
+//         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+//         {
+//           fullName: e.target.name.value,
+//           phone: e.target.phone.value,
+//           interest: e.target.interest.value,
+//           email: e.target.email.value,
+//           message: e.target.message.value,
+//         }
+//       )
+
+//       setSuccess(true)
+//       e.target.reset()
+//       setCharCount(0)
+//     } catch (err) {
+//       console.error('Email sending failed:', err)
+//       setSuccess(false)
+//     }
+
+//     setLoading(false)
+//   }
+
 import { useState } from 'react';
 
 export default function Contact() {
   const [charCount, setCharCount] = useState(0);
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(null); // null | true | false
+  const [success, setSuccess] = useState(null);
+  const [error, setError] = useState(null);
 
   const handleMessage = (e) => {
     const value = e.target.value.slice(0, 500);
@@ -60,6 +106,7 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
     setSuccess(null);
+    setError(null);
 
     const formData = {
       name: e.target.name.value.trim(),
@@ -70,24 +117,27 @@ export default function Contact() {
     };
 
     try {
-      const API_URL = process.env.NODE_ENV === 'development' 
-        ? 'http://localhost:3000'   // ← your backend port
-        : '';  // empty = relative /send-email in prod
+      // ✅ FIXED: correct ports and paths for both environments
+      const API_URL =
+        import.meta.env.MODE === 'development'
+          ? 'http://localhost:3000'
+          : 'https://tef.com.np';
 
-      const response = await fetch(`${API_URL}/send-email`, {
+      const response = await fetch(`${API_URL}/api/contact`, {  // ✅ FIXED path
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify(formData),
       });
 
-      // ← Add this: Log raw response for debugging
-      const text = await response.text();  // get as text first
-      console.log('Raw backend response:', text);  // ← check this in console!
+      const text = await response.text();
+      console.log('Raw backend response:', text);
       console.log('Status code:', response.status);
 
       let result;
       try {
-        result = JSON.parse(text);  // try to parse
+        result = JSON.parse(text);
       } catch (jsonErr) {
         console.error('JSON parse failed – raw body was:', text);
         throw new Error('Invalid response from server (not JSON)');
@@ -106,12 +156,12 @@ export default function Contact() {
       setCharCount(0);
     } catch (err) {
       console.error('Send error details:', err.message);
+      setError(err.message || String(err));
       setSuccess(false);
     } finally {
       setLoading(false);
     }
   };
-
 
   return (
     <section id="contact" className="contact-section">
@@ -136,7 +186,7 @@ export default function Contact() {
 
               <div className="contact-item mt-3">
                 <strong>Phone Number</strong><br />
-                <i className="bi bi-telephone"></i>  01-4012646
+                <i className="bi bi-telephone"></i> 01-4012646
               </div>
 
               <div className="contact-item mt-3">
@@ -144,18 +194,19 @@ export default function Contact() {
                 <i className="bi bi-envelope"></i> info@tef.com.np
               </div>
             </div>
-            <div class="social-icons">
-              <a href="#" class="icon linkedin" aria-label="LinkedIn">
-                <i class="bi bi-linkedin"></i>
+
+            <div className="social-icons">
+              <a href="#" className="icon linkedin" aria-label="LinkedIn">
+                <i className="bi bi-linkedin"></i>
               </a>
-              <a href="#" class="icon twitter" aria-label="Twitter">
-                <i class="bi bi-twitter-x"></i>
+              <a href="#" className="icon twitter" aria-label="Twitter">
+                <i className="bi bi-twitter-x"></i>
               </a>
-              <a href="#" class="icon facebook" aria-label="Facebook">
-                <i class="bi bi-facebook"></i>
+              <a href="#" className="icon facebook" aria-label="Facebook">
+                <i className="bi bi-facebook"></i>
               </a>
-              <a href="#" class="icon youtube" aria-label="YouTube">
-                <i class="bi bi-youtube"></i>
+              <a href="#" className="icon youtube" aria-label="YouTube">
+                <i className="bi bi-youtube"></i>
               </a>
             </div>
           </div>
@@ -191,17 +242,17 @@ export default function Contact() {
 
                     <div className="col-md-6">
                       <input
-                        name="phone" // Added name
+                        name="phone"
                         id="phone"
                         className="form-control"
                         placeholder="Phone Number *"
-                        required // Added if mandatory
+                        required
                       />
                     </div>
 
                     <div className="col-md-6">
-                      <select 
-                        name="interest" // Added name
+                      <select
+                        name="interest"
                         id="interest"
                         className="form-select"
                       >
@@ -242,7 +293,7 @@ export default function Contact() {
 
                       {success === false && (
                         <div className="alert alert-danger mt-4">
-                          ❌ Failed to send message. Please try again.
+                          ❌ {error}
                         </div>
                       )}
                     </div>
@@ -261,5 +312,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }

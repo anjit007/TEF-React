@@ -4,13 +4,18 @@ export default function Hero() {
       <div className="hero-watermark">TRISHAKTI</div>
 
       <div className="container">
-        <div className="row align-items-center hero-content">
-          <div className="col-lg-6">
+        <div className="row align-items-center">
+
+          {/* Left column — always full-width on mobile, half on desktop */}
+          <div className="col-12 col-lg-6 hero-card">
             <span className="hero-badge">| TRUSTED EQUITY INVESTMENT</span>
 
             <h1>
-              Building Wealth<br />
-              Through Strategic<br />
+              Building Wealth
+              {/* Use a soft break on md+; collapses to inline on xs via CSS */}
+              <br className="d-none d-sm-block" />
+              Through Strategic
+              <br className="d-none d-sm-block" />
               <span>Equity Investment</span>
             </h1>
 
@@ -22,18 +27,26 @@ export default function Hero() {
 
             <div className="hero-actions">
               <a href="#contact" className="btn-primary-lg">
-                Start Investing <span>→</span>
+                Start Investing <span aria-hidden="true">→</span>
               </a>
               <a href="#philosophy" className="hero-link">
-                Learn Our Approach  <i class="bi bi-arrow-right"></i>
+                Learn Our Approach&nbsp;
+                <i className="bi bi-arrow-right" aria-hidden="true"></i>
               </a>
             </div>
           </div>
+
+          {/* Right column — hidden on mobile, visible lg+ (add your card here if needed) */}
+          <div className="col-lg-6 d-none d-lg-flex position-relative justify-content-end">
+            {/* Stat card or illustration goes here */}
+          </div>
+
         </div>
       </div>
 
-      <div className="hero-shape shape-1"></div>
-      <div className="hero-shape shape-2"></div>
+      {/* Decorative shapes (hidden on xs via CSS) */}
+      <div className="hero-shape shape-1" aria-hidden="true"></div>
+      <div className="hero-shape shape-2" aria-hidden="true"></div>
     </section>
   );
 }

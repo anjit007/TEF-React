@@ -86,91 +86,94 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors());
+// ✅ FIXED: Allow requests from your Vite dev server (localhost:5173)
+app.use(cors({
+  origin: [
+    'http://localhost:5173',   // Vite default port
+    'http://localhost:5000',   // fallback if using CRA
+    'https://tef.com.np',      // production
+  ],
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+}));
+
 app.use(express.json());
 
-console.log("ENV CHECK → EMAIL_USER:", process.env.EMAIL_USER || 'not set');
-console.log("ENV CHECK → EMAIL_PASS:", process.env.EMAIL_PASS ? "LOADED" : "MISSING");
+// Debug env
+console.log("EMAIL_USER:", process.env.EMAIL_USER || 'not set');
+console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "LOADED" : "MISSING");
 
+// SMTP setup
 const transporter = nodemailer.createTransport({
   host: "s11740.sgp1.stableserver.net",
   port: 465,
-  secure: true,                       // SSL for port 465
+  secure: true,
   auth: {
     user: process.env.EMAIL_USER || "support@tef.com.np",
     pass: process.env.EMAIL_PASS,
   },
-  // No tls override needed since verify succeeded
 });
 
-// Verify SMTP connection on server startup (very useful for debugging)
-transporter.verify((error, success) => {
+// Verify SMTP on startup
+transporter.verify((error) => {
   if (error) {
-    console.error("SMTP connection ERROR at startup:", error);
+    console.error("SMTP ERROR:", error);
   } else {
-    console.log("SMTP server connection verified and ready ✅");
+    console.log("SMTP ready ✅");
   }
 });
 
-// Contact form endpoint
-app.post('/send-email', async (req, res) => {
+// ✅ Contact form route
+app.post('/api/contact', async (req, res) => {
   const { name, email, phone, interest, message } = req.body;
 
-  // Basic validation
   if (!name || !email || !message) {
     return res.status(400).json({
       success: false,
-      message: 'Missing required fields (name, email, message)'
+      message: 'Missing required fields: name, email, and message are required.',
     });
   }
 
-  // Email content
   const mailOptions = {
-    from: `${email}`, // must match authenticated user
-    to: 'support@tef.com.np',                             // where inquiries go
-    replyTo: email,                                       // so replies go to the sender
-    subject: `New Contact Inquiry from ${name.trim()}`,
+    from: `"TEF Website" <support@tef.com.np>`,
+    replyTo: email,
+    to: 'support@tef.com.np',
+    subject: `New Contact Inquiry from ${name}`,
     text: `
-    Name: ${name}
-    Email: ${email}
-    Phone: ${phone || 'N/A'}
-    Interest: ${interest || 'N/A'}
-    Message:
-    ${message}
-        `.trim(),
-        html: `
-        <h3 style="color: #2c3e50;">New Contact Inquiry</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
-        <p><strong>Interest:</strong> ${interest || 'N/A'}</p>
-        <hr style="border: 1px solid #eee; margin: 15px 0;">
-        <p><strong>Message:</strong><br>${message.replace(/\n/g, '<br>')}</p>
-        `
-    };
+Name: ${name}
+Email: ${email}
+Phone: ${phone || 'N/A'}
+Interest: ${interest || 'N/A'}
+Message:
+${message}
+    `,
+    html: `
+      <h3>New Contact Inquiry</h3>
+      <p><b>Name:</b> ${name}</p>
+      <p><b>Email:</b> ${email}</p>
+      <p><b>Phone:</b> ${phone || 'N/A'}</p>
+      <p><b>Interest:</b> ${interest || 'N/A'}</p>
+      <hr/>
+      <p><b>Message:</b><br>${message.replace(/\n/g, '<br>')}</p>
+    `,
+  };
 
   try {
     await transporter.sendMail(mailOptions);
-    console.log(`Email sent successfully from ${email}`);
-    
     res.status(200).json({
       success: true,
-      message: 'Thank you! Your message has been sent successfully.'
+      message: 'Message sent successfully',
     });
   } catch (error) {
-    console.error('Error sending email:', error.message);
-    console.error('Full error:', error);
-
+    console.error("EMAIL ERROR:", error);
     res.status(500).json({
       success: false,
       message: 'Failed to send email. Please try again later.',
-      error: error.message   // optional: only show in dev, remove in prod if desired
     });
   }
 });
 
 // Start server
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-  console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`✅ Server running on http://localhost:${port}`);
 });
